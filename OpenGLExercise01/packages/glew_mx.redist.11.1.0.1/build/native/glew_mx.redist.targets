@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" InitialTargets="glew_mx_redist_init;glew_mx_redist_init_2">
+  <PropertyGroup Label="Default initializers for properties">
+    <Linkage-glew_mx_redist Condition="'$(Linkage-glew_mx_redist)' == ''">dynamic</Linkage-glew_mx_redist>
+    <CallingConvention-glew_mx_redist Condition="'$(CallingConvention-glew_mx_redist)' == ''">cdecl</CallingConvention-glew_mx_redist>
+  </PropertyGroup>
+  <Target Name="glew_mx_redist_init">
+    <glew_mx_redist_Contains Text="Linkage-dynamic" Library="glew_mx_redist" Value="dynamic" Condition="'$(Linkage-glew_mx_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-glew_mx_redist" />
+    </glew_mx_redist_Contains>
+    <glew_mx_redist_Contains Text="Linkage-static" Library="glew_mx_redist" Value="static" Condition="'$(Linkage-glew_mx_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-glew_mx_redist" />
+    </glew_mx_redist_Contains>
+    <glew_mx_redist_Contains Text="Linkage-ltcg" Library="glew_mx_redist" Value="ltcg" Condition="'$(Linkage-glew_mx_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-glew_mx_redist" />
+    </glew_mx_redist_Contains>
+    <glew_mx_redist_Contains Text="Linkage-sxs" Library="glew_mx_redist" Value="sxs" Condition="'$(Linkage-glew_mx_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="Linkage-glew_mx_redist" />
+    </glew_mx_redist_Contains>
+    <glew_mx_redist_Contains Text="CallingConvention-cdecl" Library="glew_mx_redist" Value="cdecl" Condition="'$(CallingConvention-glew_mx_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-glew_mx_redist" />
+    </glew_mx_redist_Contains>
+    <glew_mx_redist_Contains Text="CallingConvention-stdcall" Library="glew_mx_redist" Value="stdcall" Condition="'$(CallingConvention-glew_mx_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-glew_mx_redist" />
+    </glew_mx_redist_Contains>
+    <glew_mx_redist_Contains Text="CallingConvention-fastcall" Library="glew_mx_redist" Value="fastcall" Condition="'$(CallingConvention-glew_mx_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-glew_mx_redist" />
+    </glew_mx_redist_Contains>
+    <glew_mx_redist_Contains Text="CallingConvention-thiscall" Library="glew_mx_redist" Value="thiscall" Condition="'$(CallingConvention-glew_mx_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-glew_mx_redist" />
+    </glew_mx_redist_Contains>
+    <glew_mx_redist_Contains Text="CallingConvention-clrcall" Library="glew_mx_redist" Value="clrcall" Condition="'$(CallingConvention-glew_mx_redist)'==''">
+      <Output TaskParameter="Result" PropertyName="CallingConvention-glew_mx_redist" />
+    </glew_mx_redist_Contains>
+  </Target>
+  <Target Name="glew_mx_redist_init_2">
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\Win32\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\Win32\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\Win32\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\x64\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\x64\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\x64\Release\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\Win32\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\Win32\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\Win32\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\x64\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="( $(PlatformToolset.ToLower().IndexOf('v110')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v110\x64\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+    <SetEnv Condition="'$(PlatformToolset.ToLower())' == 'v100' And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" Name="PATH" Prefix="true" Value="$(MSBuildThisFileDirectory)../..//build/native/bin/v100\x64\Debug\dynamic">
+      <Output TaskParameter="OutputEnvironmentVariable" PropertyName="PATH" />
+    </SetEnv>
+  </Target>
+  <ItemGroup Label="v120 and Win32 and Release and dynamic" Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\Win32\Release\dynamic\glew.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="v120 and x64 and Release and dynamic" Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\x64\Release\dynamic\glew.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="v120 and Win32 and Debug and dynamic" Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\Win32\Debug\dynamic\glew.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="v120 and x64 and Debug and dynamic" Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'">
+    <None Include="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\x64\Debug\dynamic\glew.dll" Condition="(('$(AppContainerApplication.ToLower())' == 'true')) OR (('$(TargetPlatformIdentifier.ToLower())' == 'windows phone' And '$(TargetPlatformVersion)' == '8.0'))">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PropertyPageSchema Include="$(MSBuildThisFileDirectory)\default-propertiesui.xml" />
+  </ItemGroup>
+  <Target Name="glew_mx_redist_AfterBuild" AfterTargets="AfterBuild" />
+  <Target Name="glew_mx_redist_AfterBuild_v120_and_Win32_and_Release_and_dynamic" Label="v120 and Win32 and Release and dynamic" Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" AfterTargets="glew_mx_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\Win32\Release\dynamic\glew.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="glew_mx_redist_AfterBuild_v120_and_x64_and_Release_and_dynamic" Label="v120 and x64 and Release and dynamic" Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) == -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" AfterTargets="glew_mx_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\x64\Release\dynamic\glew.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="glew_mx_redist_AfterBuild_v120_and_Win32_and_Debug_and_dynamic" Label="v120 and Win32 and Debug and dynamic" Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'win32' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" AfterTargets="glew_mx_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\Win32\Debug\dynamic\glew.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <Target Name="glew_mx_redist_AfterBuild_v120_and_x64_and_Debug_and_dynamic" Label="v120 and x64 and Debug and dynamic" Condition="( $(PlatformToolset.ToLower().IndexOf('v120')) &gt; -1 Or '$(PlatformToolset.ToLower())' == 'windowskernelmodedriver8.0' Or '$(PlatformToolset.ToLower())' == 'windowsapplicationfordrivers8.0' Or '$(PlatformToolset.ToLower())' == 'windowsusermodedriver8.0' ) And '$(Platform.ToLower())' == 'x64' And ( $(Configuration.ToLower().IndexOf('debug')) &gt; -1 ) And '$(Linkage-glew_mx_redist.ToLower())' == 'dynamic'" AfterTargets="glew_mx_redist_AfterBuild">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)../..//build/native/bin/v120\x64\Debug\dynamic\glew.dll" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="true" />
+  </Target>
+  <UsingTask TaskName="glew_mx_redist_Contains" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll" TaskFactory="CodeTaskFactory">
+    <ParameterGroup>
+      <Text Output="false" ParameterType="System.String" />
+      <Library Output="false" Required="true" ParameterType="System.String" />
+      <Value Output="false" Required="true" ParameterType="System.String" />
+      <Result Output="true" ParameterType="System.String" />
+    </ParameterGroup>
+    <Task>
+      <Code>Result = ((Text ?? "").Split(';').Contains(Library) ) ? Value : String.Empty;</Code>
+    </Task>
+  </UsingTask>
+</Project>
